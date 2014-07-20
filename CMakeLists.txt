@@ -1,0 +1,15 @@
+PROJECT(chibios-drivers)
+
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+ENABLE_LANGUAGE(ASM)
+
+FIND_PACKAGE(ChibiOS COMPONENTS kernel hal pal ext serial usb serial_usb spi REQUIRED)
+
+INCLUDE_DIRECTORIES(   
+    ${ChibiOS_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/boards/WAVESHARE_XCORE407I/
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/utils
+)
+
+ADD_SUBDIRECTORY(demos)
